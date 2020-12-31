@@ -111,6 +111,7 @@ h1,h2,h3,h4{
   }
   .sidebar{
     padding-left:8px;
+    
     width:20%;
     border-right:1px solid #f0f0f0;
     position: fixed;
@@ -176,7 +177,7 @@ h1,h2,h3,h4{
     
     padding:50px 0 50px 20%;
     .contentInner{
-      padding: 0 170px 32px 64px;
+      padding: 0 0px 32px 64px;
       width:100%;
       .brief{
         font-size: 14px;
@@ -271,4 +272,24 @@ h1,h2,h3,h4{
         line-height: 32px;
         margin:0
       }
+  }
+
+  /* transition */
+  .star-enter {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  .star-enter-active {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 700ms
+  }
+  .star-exit {
+    opacity: 1;
+    transform: translateX(-100px);
+  }
+  .star-exit-active {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: all 700ms
   }

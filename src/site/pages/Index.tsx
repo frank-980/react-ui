@@ -1,5 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
+
 const Index:React.FC = ()=>{
-    return (<div>123</div>)
+    
+    return (
+        <div className="contentInner">
+        123
+
+    </div>
+    )
 }
 export default Index

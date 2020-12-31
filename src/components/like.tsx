@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from 'react'
 const Like:React.FC=()=>{
+    console.log(123)
     const [inputVal,setInput] = useState("")
     const [obj,setObj] = useState({search:true})
     useEffect(()=>{
-        console.log(inputVal)
+        
     },[obj.search])
     function test(){
         console.log(123)

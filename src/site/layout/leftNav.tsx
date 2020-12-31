@@ -1,16 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
+import {ISideProps,ISideData} from '../interface/sideBar'
 import {Link} from 'react-router-dom'
-const SideBar:React.FC = (props)=>{
-    const [active,setActive]=useState(1)
-    interface Idata{
-        text:string,
-        children:{
-            id:number,
-            text:string,
-            path:string,
-        }[]
-    }
-    const sidebar:Idata[]=[
+const SideBar:React.FC<ISideProps> = (props:ISideProps)=>{
+  const {changeToAny,routeActive,width} = props
+    const sidebar:ISideData[]=[
         {
           text:"开发指南",
           children:[
@@ -22,7 +15,7 @@ const SideBar:React.FC = (props)=>{
             {
               id:2,
               text:"快速上手",
-              path:"#/component/usage",
+              path:"usage",
             },
           ]
         },
@@ -38,10 +31,12 @@ const SideBar:React.FC = (props)=>{
         },
     ]
     const switchNav =(id:number)=> {
-        setActive(id)
+      if(routeActive!==id){
+        changeToAny("changeToFalse")
+      }
     }
     return (
-        <div className="sidebar">
+        <div className="sidebar" style={{width:width}}>
             <ul className="firstUl">
                 {sidebar.map((item,index)=>{
                     return (
@@ -51,7 +46,7 @@ const SideBar:React.FC = (props)=>{
                                 return (
                                     <div key={item2.id}>
                                       <Link 
-                                        className={`thirdTit ${active === item2.id ?"active":""}`} 
+                                        className={`thirdTit ${routeActive === item2.id ?"active":""}`} 
                                         to={item2.path}
                                         onClick={()=>switchNav(item2.id)}>
                                         {item2.text}

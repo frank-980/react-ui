@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Icon from "../../../../components/Icon"
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { Icontent } from '../../../interface'
+import { Icontent } from '../../../interface/content'
 const CodeBox:React.FC<Icontent> = (props:Icontent)=>{
     const {demo,title="",description="",code=""} = props
     const [hideStyle,setHideStyle] = useState({display:"none"})

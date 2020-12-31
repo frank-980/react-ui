@@ -1,5 +1,5 @@
 import React from 'react';
-import { IBrief } from '../../interface'
+import { IBrief } from '../../interface/content'
 const Brief:React.FC<IBrief> = (props:IBrief)=>{
     const {h1,h1p,h2p} = props
     return (

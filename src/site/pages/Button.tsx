@@ -1,6 +1,6 @@
 import Document from '../layout/content/Document'
 import React from 'react'
-import {IBrief, Icontent, Iprops} from '../interface'
+import {IBrief, Icontent, Iprops} from '../interface/content'
 import Button from '../../components/Button/button'
 const brief:IBrief={
     h1:"1Button按钮",
