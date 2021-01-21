@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import {ThemeContext} from '../../App'
+import {ThemeContext} from '../../App';
+import Icon from '../Icon'
 interface Ibutton{
     type?:string;
     size?:string;
@@ -10,6 +11,9 @@ interface Ibutton{
     block?:boolean;
     children?:React.ReactNode;
     onClick?: any;
+    style?:any;
+    danger?:boolean;
+    loading?:boolean;
 }
 
 const Button:React.FC<Ibutton> = (props)=>{
@@ -21,6 +25,9 @@ const Button:React.FC<Ibutton> = (props)=>{
         block=false,
         shape,
         children,
+        style,
+        danger=false,
+        loading=false,
         /** if we extract items here, we dont need use omit.js */
         // React does not recognize the `htmlType` prop on a DOM element. Here we pick it out of `rest`.
         ...rest
@@ -34,6 +41,7 @@ const Button:React.FC<Ibutton> = (props)=>{
         [`${perfixCls}-disabled`]:disabled,
         [`${perfixCls}-block`]:block,
         [`${perfixCls}-ghost`]:ghost,
+        [`${perfixCls}-danger`]:danger,
     })
     const handleClick = (e:any)=>{
         if(props.disabled) return 
@@ -43,8 +51,12 @@ const Button:React.FC<Ibutton> = (props)=>{
         }
     }
     return (
-        <div className={classes} onClick={(e)=>handleClick(e)}>
-            
+        <div className={classes} onClick={(e)=>handleClick(e)} style={style}>
+            {
+            loading
+                ? <Icon icon="icon-loading" style={{marginRight:"8px"}} spin/>
+                : ""
+            }
             {props.children}
         </div>
     )

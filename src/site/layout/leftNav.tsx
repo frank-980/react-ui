@@ -5,33 +5,71 @@ const SideBar:React.FC<ISideProps> = (props:ISideProps)=>{
   const {changeToAny,routeActive,width} = props
     const sidebar:ISideData[]=[
         {
-          text:"开发指南",
+          text:"通用",
           children:[
             {
               id:1,
-              text:"安装",
-              path:"index",
+              text:"button 按钮",
+              path:"/button",
             },
             {
               id:2,
-              text:"快速上手",
-              path:"usage",
+              text:"Icon 图标",
+              path:"/icon",
             },
           ]
         },
         {
-          text:"组件",
+          text:"布局",
           children:[
             {
-              id:3,
-              text:"button 按钮",
-              path:"button",
+              id:34,
+              text:"Divider分割线",
+              path:"/divider",
+            },
+            {
+              id:4,
+              text:"Grid 栅格",
+              path:"/grid",
+            }
+          ]
+        },
+        {
+          text:"数据录入",
+          children:[
+            {
+              id:5,
+              text:"Select 选择器",
+              path:"/select",
+              
+            },
+            {
+              id:6,
+              text:"Checkbox 多选框",
+              path:"/checkbox",
+            },
+
+            {
+              id:7,
+              text:"Input 输入框",
+              path:"/input",
+            },
+           
+          ]
+        },
+        {
+          text:"数据展示",
+          children:[
+            {
+              id:9,
+              text:"Table 表格",
+              path:"/table",
             }
           ]
         },
     ]
-    const switchNav =(id:number)=> {
-      if(routeActive!==id){
+    const switchNav =(path:string)=> {
+      if(routeActive!==path){
         changeToAny("changeToFalse")
       }
     }
@@ -46,9 +84,9 @@ const SideBar:React.FC<ISideProps> = (props:ISideProps)=>{
                                 return (
                                     <div key={item2.id}>
                                       <Link 
-                                        className={`thirdTit ${routeActive === item2.id ?"active":""}`} 
+                                        className={`thirdTit ${routeActive === item2.path ?"active":""}`} 
                                         to={item2.path}
-                                        onClick={()=>switchNav(item2.id)}>
+                                        onClick={()=>switchNav(item2.path)}>
                                         {item2.text}
                                       </Link>
                                     </div>

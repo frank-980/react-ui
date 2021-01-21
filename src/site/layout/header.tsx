@@ -7,7 +7,7 @@ const Header:React.FC = ()=>{
             <div className="header-row">
                 <a id="logoBox">
                     <img className="logo_img" src={logo}/>
-                    <span>sxd design</span>
+                    <span>Sxd Design</span>
                 </a>
                 <div id="searchBox">
                     <Icon icon="icon-search" style={{paddingRight:"16px"}}/>

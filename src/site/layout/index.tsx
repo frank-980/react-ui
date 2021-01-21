@@ -8,14 +8,13 @@ import LeftNav from './leftNav'
 import Footer from './footer'
 import {ISiteProps,ISiteState} from '../interface/site'
 
-enum route {"/404","/index", "/usage", "/button", Wed, Thu, Fri, Sat};
+enum route {"/404","/button", "/icon", "/divider"=34,"/grid", "/select","/list","/input", Thu, Fri, Sat};
 
 const Site:React.FC<ISiteProps> = (props:ISiteProps)=>{
     const {isShow,changeToAny,children,location,width,setWidth} = props
-
     /* current router change */
         const Active:number = parseInt(route[location.pathname])
-
+        const currentLocation = location.pathname
     /* screen size change */
         window.onresize=function(){  
             setWidth(window.innerWidth)
@@ -36,7 +35,7 @@ const Site:React.FC<ISiteProps> = (props:ISiteProps)=>{
         <div className="wrapper">
             <Header/>
             <div className="main container">
-                <LeftNav routeActive={Active} changeToAny={changeToAny} width={dynStyle.width}/>
+                <LeftNav routeActive={currentLocation} changeToAny={changeToAny} width={dynStyle.width}/>
                 <div className="contentbar" style={{padding:dynStyle.padding}}>
                     <CSSTransition in={isShow} timeout={1000} classNames="star">
 

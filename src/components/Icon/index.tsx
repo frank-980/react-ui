@@ -6,13 +6,14 @@ interface Iicon{
     rotate?:number;
     spin?:boolean;
     style?:object;
+    className?:any;
     onClick?:any;
 }
-const Icon:React.FC<Iicon> = (props)=>{
-    const { rotate, spin=false, style={}, icon } = props
+const Icon:React.FC<Iicon> = (props:Iicon)=>{
+    const { rotate, spin=false, style={}, icon ,className} = props
     const theme = React.useContext(ThemeContext)
     const perfixCls = theme("icon")
-    const classes = classNames(perfixCls,'iconfont',{
+    const classes = classNames(className,perfixCls,'iconfont',{
         [`${icon}`]:icon,
         [`${perfixCls}-spin`]:spin,
     })

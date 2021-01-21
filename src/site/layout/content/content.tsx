@@ -1,12 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import CodePreview from './demo/CodePreview'
-import {Icontent} from '../../interface/content'
+import {Icontent} from '../../interface/document'
 interface IDoc{
     content:Icontent[];
 }
 const Content:React.FC<IDoc> = (props:IDoc)=>{
-    
-    
     const {content}=props
     const cLength = content.length
     if(cLength<1) return (<div></div>)
@@ -25,7 +23,18 @@ const Content:React.FC<IDoc> = (props:IDoc)=>{
     }
     for(let i=0;i<cLength-middle;i++){
         right=[...right,content[i+middle]]
-    }  
+    }
+    if(content[0].col===1){
+        return (
+            <div>
+                <div className="codeWrap" style={{width:"100%"}}>
+                    {content.map((item:Icontent)=>{
+                        return (<CodePreview key={item.id} {...item}/>)
+                    })}
+                </div> 
+            </div>
+        ) 
+    }
     return (
         <div>
             <div className="codeWrap">

@@ -1,0 +1,25 @@
+.sxd-table td, .sxd-table th{
+    border: 1px solid #ddd;
+}
+.header-col{
+    text-align: left;
+    border-bottom:1px solid #ebeef5;
+    margin:0;
+    padding: 12px 10px;
+    color:#909399;
+    font-size:14px;
+}
+.body-row{
+    text-align: left;
+    width:100%;
+    justify-content: space-between;
+    background: white;
+}
+.body-row:hover{
+    background: #f5f7fa;
+}
+.body-col{
+    padding:12px 10px;
+    border-bottom:1px solid #ebeef5;
+    font-size:14px;
+}

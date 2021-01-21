@@ -1,0 +1,56 @@
+
+.sxd-divider{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 16px 0;
+    padding: 0;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    -webkit-font-feature-settings: "tnum";
+    font-feature-settings: "tnum";
+    border-top: 1px solid rgba(0,0,0,.06);
+}
+.sxd-divider-dashed {
+    background: 0 0;
+    border: dashed rgba(0,0,0,.06);
+    border-width: 1px 0 0;
+}
+.sxd-divider-with-text{
+    border-top: 0;
+    display: flex;
+    color: rgba(0,0,0,.85);
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+.sxd-divider-with-text:before, .sxd-divider-with-text:after{
+    position: relative;
+    top: 50%;
+    width: 81%;
+    border-top: 1px solid transparent;
+    border-top-color: rgba(0,0,0,.06);
+    border-bottom: 0;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+    content: "";
+}
+.sxd-divider-with-text-middle:before, .sxd-divider-with-text-middle:after{
+    top:50%;
+    width:50%;
+}
+.sxd-divider-with-text-left:before, .sxd-divider-with-text-right:after{
+    top:50%;
+    width:5%;
+}
+.sxd-divider-with-text-left:after, .sxd-divider-with-text-right:before{
+    top:50%;
+    width:95%;
+}
+.sxd-divider-inner-text{
+    display: inline-block;
+    padding: 0 1em;
+}

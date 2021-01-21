@@ -211,7 +211,7 @@ h1,h2,h3,h4{
       .codeWrap{
         padding-right:16px;
         display: inline-block;
-        max-width: calc(50% - 32px);
+        width: calc(50% - 32px);
         vertical-align: top;
       }
       .codeBox{

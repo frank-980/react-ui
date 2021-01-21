@@ -1,10 +1,9 @@
 export interface IBrief{
-    h1:string;
-    h1p:string;
-    h2p?:any;
+    introduce?:any;
 }
 export interface Icontent{
     id:number;
+    col?:number;
     demo?:any;
     title?:string;
     description?:string;
