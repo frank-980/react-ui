@@ -24,7 +24,7 @@ const SideBar:React.FC<ISideProps> = (props:ISideProps)=>{
           children:[
             {
               id:34,
-              text:"Divider分割线",
+              text:"Divider 分割线",
               path:"/divider",
             },
             {

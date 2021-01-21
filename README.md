@@ -1,10 +1,22 @@
-# Getting Started with Create React App
+# SXD-UI
 
+create-react-app + typescript 组件库
 npx create-react-app my-app --template typescript
 
-## Available Scripts
+## Include
 
-In the project directory, you can run:
+1. 通用：
+    - button 按钮
+    - Icon 图标
+2. 布局：
+    - Divider分割线
+    - Grid 栅格
+3. 数据录入：
+    - [Select 选择器](https://www.yuque.com/frank980/ygs3ps/ec6x00)
+    - Checkbox 多选框
+    - Input 输入框
+4. 数据展示：
+    - 
 
 ### `yarn start`
 
