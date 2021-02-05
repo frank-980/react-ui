@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import routeInfo from './route'
 import screenWidth from './screenWidth'
+import items from './items'
 const reducer = combineReducers({
-  routeInfo,
-  screenWidth
+  screenWidth,
+  items
 })
 
 export default reducer

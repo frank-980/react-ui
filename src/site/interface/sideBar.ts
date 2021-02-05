@@ -1,9 +1,6 @@
 export interface ISideProps{
-    changeToAny:any;
-    routeActive:string;
-    width:number;
+    style?:object;
 }
-
 export interface ISideData{
     text:string,
     children:{

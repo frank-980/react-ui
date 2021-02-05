@@ -1,6 +1,5 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import {ThemeContext} from '../../App'
 interface Iicon{
     icon:string;
     rotate?:number;
@@ -11,8 +10,7 @@ interface Iicon{
 }
 const Icon:React.FC<Iicon> = (props:Iicon)=>{
     const { rotate, spin=false, style={}, icon ,className} = props
-    const theme = React.useContext(ThemeContext)
-    const perfixCls = theme("icon")
+    const perfixCls = "sxd-icon"
     const classes = classNames(className,perfixCls,'iconfont',{
         [`${icon}`]:icon,
         [`${perfixCls}-spin`]:spin,

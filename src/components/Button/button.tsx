@@ -1,6 +1,5 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import {ThemeContext} from '../../App';
 import Icon from '../Icon'
 interface Ibutton{
     type?:string;
@@ -32,8 +31,7 @@ const Button:React.FC<Ibutton> = (props)=>{
         // React does not recognize the `htmlType` prop on a DOM element. Here we pick it out of `rest`.
         ...rest
       } = props;
-    const theme = React.useContext(ThemeContext)
-    const perfixCls = theme("btn")
+    const perfixCls = "sxd-btn"
     const classes = classNames(perfixCls, {
         [`${perfixCls}-${type}`]:type,
         [`${perfixCls}-${size}`]:size,

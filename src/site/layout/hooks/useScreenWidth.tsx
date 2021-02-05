@@ -1,13 +1,27 @@
 import {useState,useEffect} from 'react'
-const useScreenWidth = (width:number,deps:any[]=[]):any=>{
-    const [dynStyle,setdynStyle] = useState({width:"20%",padding:"50px 0 50px 20%"})
+const useScreenWidth = ():any=>{
+    const [width,setWidth] = useState(window.innerWidth)
+    const [moreThan750,isMoreThan750] = useState(true)
+    /* screen size change */
+    const resizeHandle = ()=>{
+        removeEventListener()
+        setWidth(window.innerWidth)
+    }
+    const addEventListener=()=>{
+        window.addEventListener("resize",resizeHandle,false);
+    }
+    const removeEventListener=()=>{
+        window.removeEventListener("resize",resizeHandle);
+    }
+    addEventListener()
+    /* end */
     useEffect(()=>{
         if(width<=750){
-            setdynStyle({width:"0",padding:"50px 0 50px 0"})
+            isMoreThan750(false)
         }else{
-            setdynStyle({width:"20%",padding:"50px 0 50px 20%"})
+            isMoreThan750(true)
         }
-    },deps)
-    return  dynStyle 
+    },[width])
+    return moreThan750
 }
 export default useScreenWidth

@@ -1,12 +1,10 @@
-import Document from '../layout/content/Document'
-import React,{useState} from 'react'
-import {IBrief, Icontent, Iprops} from '../interface/document'
-import Button from '../../components/Button/button'
+import Document from '../components/content'
+import React from 'react'
+import { Icontent, Iprops} from '../interface/document'
 import Icon from '../../components/Icon'
 import Table from '../../components/Table'
 const ButtonPage:React.FC = ()=>{
-    const brief:IBrief={
-      introduce:<>
+    const brief=(<>
         <h1>Icon 图标</h1>
         <p>提供了一套常用的图标集合。</p>
         <h2>何时使用</h2>
@@ -14,8 +12,8 @@ const ButtonPage:React.FC = ()=>{
           <p>用图标展示一些信息。</p>
         </div>
         <h2>代码演示</h2>
-        </>
-    }
+        </>)
+    
     const items:Icontent[]=[
         {
             id:1,

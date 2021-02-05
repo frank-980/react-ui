@@ -1,14 +1,10 @@
-import Document from '../layout/content/Document'
-import React,{useState} from 'react'
-import {IBrief, Icontent, Iprops} from '../interface/document'
-import Button from '../../components/Button/button'
-import Icon from '../../components/Icon'
+import Document from '../components/content'
+import React from 'react'
+import { Icontent, Iprops} from '../interface/document'
 import Table from '../../components/Table'
 import Divider from '../../components/Divider'
-import {Row,Col} from '../../components/Grid'
 const DividerPage:React.FC = ()=>{ 
-    const brief:IBrief={
-        introduce:<>
+    const brief=(<>
         <h1>Divider分割线</h1>
         <p>区隔内容的分割线</p>
         <h2>何时使用</h2>
@@ -23,8 +19,8 @@ const DividerPage:React.FC = ()=>{
             </ul>
         </div>
         <h2>代码演示</h2>
-        </>
-    }
+        </>)
+    
     const items:Icontent[]=[
 //span
         {

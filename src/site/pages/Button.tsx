@@ -1,12 +1,11 @@
-import Document from '../layout/content/Document'
+import Document from '../components/content'
 import React,{useState} from 'react'
-import {IBrief, Icontent, Iprops} from '../interface/document'
+import { Icontent, Iprops} from '../interface/document'
 import Button from '../../components/Button/button'
 import Icon from '../../components/Icon'
 import Table from '../../components/Table'
 const ButtonPage:React.FC = ()=>{
-    const brief:IBrief={
-        introduce:<>
+    const brief=(<>
         <h1>Button按钮</h1>
         <p>按钮用于开始一个即时操作</p>
         <h2>何时使用</h2>
@@ -28,8 +27,8 @@ const ButtonPage:React.FC = ()=>{
             </ul>
         </div>
         <h2>代码演示</h2>
-        </>
-    }
+        </>)
+    
     const [loading,setLoading] = useState(false)
     const clickHandle = ()=>{
         setLoading(true)
@@ -263,8 +262,6 @@ import { Button } from 'sxdui'
             <h2>Button 参数</h2>
             <Table data={data} columns={columns} />
         </div>
-      
-      
     const document:Iprops = {
         brief:brief,
         content:items,

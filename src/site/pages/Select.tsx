@@ -1,14 +1,10 @@
-import Document from '../layout/content/Document'
+import Document from '../components/content'
 import React,{useState} from 'react'
-import {IBrief, Icontent, Iprops} from '../interface/document'
-import Button from '../../components/Button/button'
+import { Icontent, Iprops} from '../interface/document'
 import {Select,Option} from '../../components/Select'
-
-import Icon from '../../components/Icon'
 import Table from '../../components/Table'
 const ButtonPage:React.FC = ()=>{
-    const brief:IBrief={
-        introduce:<>
+    const brief=(<>
         <h1>Select选择器</h1>
         <p>下拉选择器。</p>
         <h2>何时使用</h2>
@@ -23,12 +19,7 @@ const ButtonPage:React.FC = ()=>{
             </ul>
         </div>
         <h2>代码演示</h2>
-        </>
-    }
-    const [loading,setLoading] = useState(false)
-    const valueChange=(val:any)=>{
-        console.log(val)
-    }
+        </>)
     const items:Icontent[]=[
         {
             id:1,

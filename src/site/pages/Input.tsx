@@ -1,12 +1,11 @@
-import Document from '../layout/content/Document'
+import Document from '../components/content'
 import {Input,AutoComplete} from '../../components/Input'
 import {Select,Option} from '../../components/Select'
 import Table from '../../components/Table'
 import Icon from '../../components/Icon'
-import {IBrief, Icontent, Iprops} from '../interface/document'
+import { Icontent, Iprops} from '../interface/document'
 const InputPage = ()=>{
-    const brief:IBrief={
-        introduce:<>
+    const brief=(<>
         <h1>Input输入框</h1>
             <p>通过鼠标或键盘输入内容，是最基础的表单域的包装。</p>
             <h2>何时使用</h2>
@@ -21,8 +20,8 @@ const InputPage = ()=>{
                 </ul>
             </div>
             <h2>代码演示</h2>
-        </>
-    }
+        </>)
+    
     const options = [
         {value:"a10"},
         {value:"a1012"},

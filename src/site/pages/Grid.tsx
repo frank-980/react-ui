@@ -1,14 +1,11 @@
-import Document from '../layout/content/Document'
-import React,{useState} from 'react'
-import {IBrief, Icontent, Iprops} from '../interface/document'
-import Button from '../../components/Button/button'
-import Icon from '../../components/Icon'
+import Document from '../components/content'
+import React from 'react'
+import { Icontent, Iprops} from '../interface/document'
 import Table from '../../components/Table'
 import Divider from '../../components/Divider'
 import {Row,Col} from '../../components/Grid'
 const ButtonPage:React.FC = ()=>{ 
-    const brief:IBrief={
-        introduce:<>
+    const brief=(<>
         <h1>Grid栅格</h1>
         <p>24 栅格系统。</p>
         
@@ -33,8 +30,8 @@ const ButtonPage:React.FC = ()=>{
             <p>布局是基于 24 栅格来定义每一个『盒子』的宽度，但不拘泥于栅格。</p>
         </div>
         <h2>代码演示</h2>
-        </>
-    }
+        </>)
+    
     const gutterStyle = { background: '#0092ff', padding: '8px 0' };
     const boxStyle = {background:"rgba(128, 128, 128, 0.08)"}
     const height_100 = {height:"100px",lineHeight:"100px"}

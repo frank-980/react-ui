@@ -1,15 +1,12 @@
-import Document from '../layout/content/Document'
+import Document from '../components/content'
 import React,{useState} from 'react'
-import {IBrief, Icontent, Iprops} from '../interface/document'
+import { Icontent, Iprops} from '../interface/document'
 import Button from '../../components/Button/button'
-import {Select,Option} from '../../components/Select'
 import {Checkbox ,CheckboxGroup} from '../../components/Checkbox'
-import Icon from '../../components/Icon'
 import Divider from '../../components/Divider'
 import Table from '../../components/Table'
 const CheckboxPage:React.FC = ()=>{
-    const brief:IBrief={
-        introduce:<>
+    const brief=(<>
         <h1>Checkbox 多选框</h1>
         <p>多选框。</p>
         <h2>何时使用</h2>
@@ -24,10 +21,8 @@ const CheckboxPage:React.FC = ()=>{
             </ul>
         </div>
         <h2>代码演示</h2>
-        </>
-    }
+        </>)
     const [checked,setChecked] = useState(false)
-    const [checked2,setChecked2] = useState(false)
     const [disabled,setDisabled] = useState(false)
     const [checkedList, setCheckedList] = useState(['Apple']);
     const [indeterminate, setIndeterminate] = React.useState(true);

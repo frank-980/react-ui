@@ -1,14 +1,9 @@
-import Document from '../layout/content/Document'
-import React,{useState} from 'react'
-import {IBrief, Icontent, Iprops} from '../interface/document'
-import Button from '../../components/Button/button'
-import {Select,Option} from '../../components/Select'
-
-import Icon from '../../components/Icon'
+import Document from '../components/content'
+import React from 'react'
+import { Icontent, Iprops} from '../interface/document'
 import Table from '../../components/Table'
 const RadioPage:React.FC = ()=>{
-    const brief:IBrief={
-        introduce:<>
+    const brief=(<>
         <h1>Table 表格</h1>
         <p>展示行列数据。</p>
         <h2>何时使用</h2>
@@ -23,8 +18,8 @@ const RadioPage:React.FC = ()=>{
             </ul>
         </div>
         <h2>代码演示</h2>
-        </>
-    }
+        </>)
+    
     const columns = [
         {
           title: 'Name',

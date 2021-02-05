@@ -1,6 +1,4 @@
-export interface IBrief{
-    introduce?:any;
-}
+
 export interface Icontent{
     id:number;
     col?:number;
@@ -10,7 +8,7 @@ export interface Icontent{
     code?:string;
 }
 export interface Iprops{
-    brief:IBrief;
+    brief:any;
     api?:any;
     content:Icontent[];
 }

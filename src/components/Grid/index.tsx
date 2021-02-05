@@ -1,7 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import {initData,getGutter,getResponsiveGrid} from './hook'
 import classNames from 'classnames';
-import {ThemeContext} from '../../App'
 interface IRow{
     gutter?:any;
     align?:'top' | 'middle' | 'bottom';
